@@ -1,0 +1,24 @@
+Setting up Git along with GitHib
+
+1.  Set a Git username
+    git config --global user.name "Saurav Agarwal"
+
+2.  Set a Git user email
+    git config --global user.email "agr.saurav1@gmail.com"
+
+3.  Generate a new SSH key for GitHub
+    ssh-keygen -t rsa -b 4096 -C "agr.saurav1@gmail.com"
+
+4.  eval "$(ssh-agent -s)"
+
+5.  ssh-add ~/.ssh/id_rsa
+
+6.  sudo apt install xclip
+
+7.  xclip -sel clip < ~/.ssh/id_rsa.pub
+
+6.  Alternate: Copy using text editor
+
+7.  Go to settings in the GitHub profile and add new SSH key
+
+8.  git config --global core.editor "vim"
