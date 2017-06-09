@@ -1,6 +1,8 @@
 #! /bin/bash
-cd /opt/openSFM/OpenSfM/
-./bin/run_all data/dataset
-./bin/opensfm undistort path_to_data
-./bin/opensfm compute_depthmaps path_to_data
-./bin/opensfm export_openmvs path_to_data
+SFM_DIR="/opt/openSFM/OpenSfM"
+DATASET_DIR="$SFM_DIR/data/dataset1_gdrive"
+cd $SFM_DIR
+./bin/run_all $DATASET_DIR
+./bin/opensfm undistort $DATASET_DIR
+./bin/opensfm compute_depthmaps $DATASET_DIR
+./bin/opensfm export_openmvs $DATASET_DIR
