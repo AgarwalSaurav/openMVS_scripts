@@ -13,10 +13,13 @@ module load intel openmpi
 module load cuda
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/users/sagarw10/opt/CGAL-4.9/lib
 
-/users/sagarw10/opt/openMVS_updated/openmvs_build/bin/DensifyPointCloud /users/sagarw10/opt/openSFM/OpenSfM/data/dataset1_gdrive/openmvs/scene.mvs
+MVS_DIR="/users/sagarw10/opt/openMVS_updated/openmvs_build/bin"
+DATA_DIR="/users/sagarw10/opt/openSFM/OpenSfM/data/dataset1_gdrive/openmvs"
 
-/users/sagarw10/opt/openMVS_updated/openmvs_build/bin/ReconstructMesh /users/sagarw10/opt/openSFM/OpenSfM/data/dataset1_gdrive/openmvs/scene_dense.mvs
+$MVS_DIR/DensifyPointCloud $DATA_DIR/scene.mvs
 
-/users/sagarw10/opt/openMVS_updated/openmvs_build/bin/RefineMesh /users/sagarw10/opt/openSFM/OpenSfM/data/dataset1_gdrive/openmvs/scene_dense_mesh.mvs
+$MVS_DIR/ReconstructMesh $DATA_DIR/scene_dense.mvs
 
-/users/sagarw10/opt/openMVS_updated/openmvs_build/bin/TextureMesh /users/sagarw10/opt/openSFM/OpenSfM/data/dataset1_gdrive/openmvs/scene_dense_mesh_refine.mvs
+$MVS_DIR/RefineMesh $DATA_DIR/scene_dense_mesh.mvs
+
+$MVS_DIR/TextureMesh $DATA_DIR/scene_dense_mesh_refine.mvs
