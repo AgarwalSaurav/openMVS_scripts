@@ -16,13 +16,13 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/users/sagarw10/opt/CGAL-4.9/lib
 export MVS_DIR="/users/sagarw10/opt/openMVS_updated/openmvs_build/bin"
 export DATA_DIR="/users/sagarw10/opt/openSFM/OpenSfM/data/dataset1_gdrive/openmvs"
 SECONDS=0
-$MVS_DIR/DensifyPointCloud $DATA_DIR/scene.mvs -w $DATA_DIR
+$MVS_DIR/DensifyPointCloud $DATA_DIR/scene.mvs 
 dpc_time=$SECONDS
-$MVS_DIR/ReconstructMesh $DATA_DIR/scene_dense.mvs -w $DATA_DIR
+$MVS_DIR/ReconstructMesh $DATA_DIR/scene_dense.mvs 
 recm_time=`expr $SECONDS - $dpc_time`
-$MVS_DIR/RefineMesh $DATA_DIR/scene_dense_mesh.mvs -w $DATA_DIR
+$MVS_DIR/RefineMesh $DATA_DIR/scene_dense_mesh.mvs 
 refm_time=`expr $SECONDS - $recm_time`
-$MVS_DIR/TextureMesh $DATA_DIR/scene_dense_mesh_refine.mvs -w $DATA_DIR
+$MVS_DIR/TextureMesh $DATA_DIR/scene_dense_mesh_refine.mvs 
 tm_time=`expr $SECONDS - $refm_time`
 
 echo "Dataset path: $DATA_DIR"
