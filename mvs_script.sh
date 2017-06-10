@@ -25,6 +25,7 @@ refm_time=`expr $SECONDS - $recm_time`
 $MVS_DIR/TextureMesh $DATA_DIR/scene_dense_mesh_refine.mvs
 tm_time=`expr $SECONDS - $refm_time`
 
+echo "Dataset path: $DATA_DIR"
 echo "Time taken for DensifyPointCloud: $dpc_time"
 echo "Time taken for ReconstructMesh: $recm_time"
 echo "Time taken for RefineMesh: $refm_time"
