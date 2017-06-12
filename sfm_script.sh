@@ -6,7 +6,7 @@ SECONDS=0
 ./bin/run_all $DATASET_DIR
 runall_time=$SECONDS
 ./bin/opensfm undistort $DATASET_DIR
-undistort_time=`expr runall_time - $SECONDS`
+undistort_time=`expr $SECONDS - $runall_time`
 ./bin/opensfm compute_depthmaps $DATASET_DIR
 depthmaps_time=`expr $SECONDS - $undistort_time`
 ./bin/opensfm export_openmvs $DATASET_DIR
